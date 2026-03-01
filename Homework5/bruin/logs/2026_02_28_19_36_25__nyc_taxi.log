@@ -1,0 +1,81 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 1 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[19:36:25] Running:  ingestion.trips
+[19:36:25] [ingestion.trips] >> Installed 1 package in 17ms
+[19:36:26] [ingestion.trips] >> Loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet
+[19:36:31] [ingestion.trips] >> Loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-02.parquet
+[19:36:40] [ingestion.trips] Successfully collected the data from the asset, uploading to the destination...
+[19:36:42] [ingestion.trips] >> 2026-02-28 19:36:42,398|[WARNING]|72917|138550918293312|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[19:36:42] [ingestion.trips] >> 2026-02-28 19:36:42,398|[WARNING]|72917|138550918293312|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[19:36:42] [ingestion.trips] >> 
+[19:36:42] [ingestion.trips] >> Initiated the pipeline with the following:
+[19:36:42] [ingestion.trips] >>   Source: mmap / asset_data
+[19:36:42] [ingestion.trips] >>   Destination: duckdb / ingestion.trips
+[19:36:42] [ingestion.trips] >>   Incremental Strategy: append
+[19:36:42] [ingestion.trips] >>   Incremental Key: None
+[19:36:42] [ingestion.trips] >>   Primary Key: None
+[19:36:42] [ingestion.trips] >>   Pipeline ID: 1c640cda117b412bfd31f8d0ccfbc1825fdd42b287add7c24115163f8e9aced4
+[19:36:42] [ingestion.trips] >> 
+[19:36:42] [ingestion.trips] >> 
+[19:36:42] [ingestion.trips] >> Starting the ingestion...
+[19:36:46] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[19:36:46] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Memory usage: 227.45 MB (4.90%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[19:36:46] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 2.13s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> trips: 5443362  | Time: 0.00s | Rate: 543597976429.71/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1156.08 MB (5.50%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[19:36:46] [ingestion.trips] >> Resources: 1/1 (100.0%) | Time: 2.15s | Rate: 0.47/s
+[19:36:46] [ingestion.trips] >> trips: 5443362  | Time: 0.01s | Rate: 364988330.06/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1073.07 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1073.70 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1073.70 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Files: 1/1 (100.0%) | Time: 0.01s | Rate: 99.18/s
+[19:36:46] [ingestion.trips] >> Items: 5443362  | Time: 0.01s | Rate: 553535252.15/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1074.20 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Load _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1074.57 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Load _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Jobs: 0/1 (0.0%) | Time: 1.24s | Rate: 0.00/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1434.19 MB (6.60%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >>  Load _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1772329002.5436985 
+[19:36:46] [ingestion.trips] >> Jobs: 1/1 (100.0%) | Time: 1.54s | Rate: 0.65/s
+[19:36:46] [ingestion.trips] >> Memory usage: 1082.79 MB (5.20%) | CPU usage: 0.00%
+[19:36:46] [ingestion.trips] >> 
+[19:36:46] [ingestion.trips] >> Successfully finished loading data from 'mmap' to 'duckdb' in 3.89 seconds 
+[19:36:46] [ingestion.trips] >> 
+[19:36:47] [ingestion.trips] Successfully loaded the data from the asset into the destination.
+[19:36:47] Finished: ingestion.trips (19.901s)
+
+==================================================
+
+PASS ingestion.trips 
+
+
+bruin run completed successfully in 19.902s
+
+ ✓ Assets executed      1 succeeded

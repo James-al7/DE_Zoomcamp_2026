@@ -1,0 +1,8 @@
+
+Pipeline: nyc_taxi (..)
+  staging.trips (assets/staging/trips.sql)
+    ├── Incremental key is only supported with 'delete+insert', 'time_interval', 'scd2_by_time' and 'scd2_by_column' strategies. (materialization-config)
+    └── Materialization strategy 'create+time_interval' is not supported, available strategies are: [create+replace delete+insert truncate+insert append merge time_interval ddl scd2_by_time scd2_by_column] (materialization-config)
+
+
+✘ Checked 1 pipeline and found 2 issues, please check above.

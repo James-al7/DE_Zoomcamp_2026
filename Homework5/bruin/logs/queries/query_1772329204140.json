@@ -1,0 +1,15 @@
+{
+  "query": "SELECT COUNT(*) FROM ingestion.trips",
+  "timestamp": "2026-02-28T19:40:04.140590225-06:00",
+  "connection": "duckdb-default",
+  "success": true,
+  "columns": [
+    "count_star()"
+  ],
+  "rows": [
+    [
+      65320344
+    ]
+  ],
+  "timeout": 1000
+}

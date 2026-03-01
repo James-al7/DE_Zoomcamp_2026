@@ -1,0 +1,135 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-02-27T00:00:00Z - 2026-02-27T23:59:59Z
+
+Starting the pipeline execution...
+
+[19:38:54] Running:  ingestion.payment_lookup
+[19:38:54] Running:  ingestion.trips
+[19:38:54] [ingestion.trips] >> Installed 1 package in 18ms
+[19:38:55] [ingestion.trips] >> Loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet
+[19:38:55] [ingestion.trips] >> Traceback (most recent call last):
+[19:38:55] [ingestion.trips] >>   File "/tmp/bruin-arrow-292971369.py", line 19, in <module>
+[19:38:55] [ingestion.trips] >>     df = module.materialize()
+[19:38:55] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/mnt/c/Users/AdminJ/Documents/DE_Zoomcamp_2026/Homework5/bruin/my-pipeline/pipeline/assets/ingestion/trips.py", line 46, in materialize
+[19:38:55] [ingestion.trips] >>     df = pd.read_parquet(url)
+[19:38:55] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/parquet.py", line 671, in read_parquet
+[19:38:55] [ingestion.trips] >>     return impl.read(
+[19:38:55] [ingestion.trips] >>            ^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/parquet.py", line 253, in read
+[19:38:55] [ingestion.trips] >>     path_or_handle, handles, filesystem = _get_path_or_handle(
+[19:38:55] [ingestion.trips] >>                                           ^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/parquet.py", line 141, in _get_path_or_handle
+[19:38:55] [ingestion.trips] >>     handles = get_handle(
+[19:38:55] [ingestion.trips] >>               ^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/common.py", line 772, in get_handle
+[19:38:55] [ingestion.trips] >>     ioargs = _get_filepath_or_buffer(
+[19:38:55] [ingestion.trips] >>              ^^^^^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/common.py", line 404, in _get_filepath_or_buffer
+[19:38:55] [ingestion.trips] >>     with urlopen(req_info) as req:
+[19:38:55] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.cache/uv/archive-v0/W-N6h2Bt5R2iXqL6aI0BS/lib/python3.11/site-packages/pandas/io/common.py", line 281, in urlopen
+[19:38:55] [ingestion.trips] >>     return urllib.request.urlopen(*args, **kwargs)  # noqa: TID251
+[19:38:55] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 216, in urlopen
+[19:38:55] [ingestion.trips] >>     return opener.open(url, data, timeout)
+[19:38:55] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 525, in open
+[19:38:55] [ingestion.trips] >>     response = meth(req, response)
+[19:38:55] [ingestion.trips] >>                ^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 634, in http_response
+[19:38:55] [ingestion.trips] >>     response = self.parent.error(
+[19:38:55] [ingestion.trips] >>                ^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 563, in error
+[19:38:55] [ingestion.trips] >>     return self._call_chain(*args)
+[19:38:55] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 496, in _call_chain
+[19:38:55] [ingestion.trips] >>     result = func(*args)
+[19:38:55] [ingestion.trips] >>              ^^^^^^^^^^^
+[19:38:55] [ingestion.trips] >>   File "/home/adminj/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/urllib/request.py", line 643, in http_error_default
+[19:38:55] [ingestion.trips] >>     raise HTTPError(req.full_url, code, msg, hdrs, fp)
+[19:38:55] [ingestion.trips] >> urllib.error.HTTPError: HTTP Error 403: Forbidden
+[19:38:55] Failed: ingestion.trips (1.044s)
+[19:38:56] [ingestion.payment_lookup] >> 2026-02-28 19:38:56,435|[WARNING]|73149|133144218400576|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[19:38:56] [ingestion.payment_lookup] >> 2026-02-28 19:38:56,436|[WARNING]|73149|133144218400576|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[19:38:56] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[19:38:56] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[19:38:56] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[19:38:56] [ingestion.payment_lookup] >>   Incremental Key: None
+[19:38:56] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[19:38:56] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >> Starting the ingestion...
+[19:38:56] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[19:38:56] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 227.34 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[19:38:56] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 1398101.33/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 227.34 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[19:38:56] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.02s | Rate: 61.29/s
+[19:38:56] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.01s | Rate: 580.32/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 227.34 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772329136.576176 
+[19:38:56] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 227.84 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772329136.576176 
+[19:38:56] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 227.84 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772329136.576176 
+[19:38:56] [ingestion.payment_lookup] >> Files: 1/1 (100.0%) | Time: 0.01s | Rate: 88.91/s
+[19:38:56] [ingestion.payment_lookup] >> Items: 7  | Time: 0.01s | Rate: 637.56/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 230.84 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:56] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772329136.576176 
+[19:38:56] [ingestion.payment_lookup] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[19:38:56] [ingestion.payment_lookup] >> Memory usage: 231.09 MB (4.90%) | CPU usage: 0.00%
+[19:38:56] [ingestion.payment_lookup] >> 
+[19:38:57] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772329136.576176 
+[19:38:57] [ingestion.payment_lookup] >> Jobs: 1/1 (100.0%) | Time: 0.49s | Rate: 2.04/s
+[19:38:57] [ingestion.payment_lookup] >> Memory usage: 238.69 MB (4.90%) | CPU usage: 0.00%
+[19:38:57] [ingestion.payment_lookup] >> 
+[19:38:57] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.69 seconds 
+[19:38:57] [ingestion.payment_lookup] >> 
+[19:38:57] Finished: ingestion.payment_lookup (2.717s)
+[19:38:57] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[19:38:57] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[19:38:57] Running:  ingestion.payment_lookup:payment_type_id:unique
+[19:38:57] Finished: ingestion.payment_lookup:payment_type_name:not_null (21ms)
+[19:38:57] Finished: ingestion.payment_lookup:payment_type_id:unique (51ms)
+[19:38:57] Finished: ingestion.payment_lookup:payment_type_id:not_null (73ms)
+
+==================================================
+
+FAIL ingestion.trips 
+PASS ingestion.payment_lookup ...
+UPSTREAM FAILED reports.trips_report U
+UPSTREAM FAILED staging.trips UU
+
+
+bruin run completed with failures in 2.79s
+
+ ✗ Assets executed      1 failed / 1 succeeded / 2 skipped
+ ✗ Quality checks       3 succeeded / 3 skipped
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: failed to run asset code: exit status 1
+
